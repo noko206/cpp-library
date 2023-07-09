@@ -18,7 +18,7 @@ using namespace atcoder;
 typedef long long ll;
 const int INF32 = 1001001001;
 const long long INF64 = 1001001001001001001;
-struct Init { Init() { ios::sync_with_stdio(0); cin.tie(0); }} init;
+struct Init { Init() { ios::sync_with_stdio(0); cin.tie(0); cout << setprecision(15); }} init;
 template<class T> bool chmax(T &a, const T &b) { if (a < b) { a = b; return true; } return false; }
 template<class T> bool chmin(T &a, const T &b) { if (a > b) { a = b; return true; } return false; }
 template<class T, class... Ts> void output(const T& a, const Ts&... b) { cout << a; (cout << ... << (cout << ' ', b)); cout << '\n'; }
