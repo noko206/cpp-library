@@ -1,9 +1,11 @@
-template <typename T> map<int, T> compress(const vector<T> &a) {
-    map<int, T> ans;
-    sort(ans.begin(), ans.end());
-    ans.erase(unique(ans.begin(), ans.end()), ans.end());
-    for (int i = 0; i < (int)a.size(); ++i) {
-        ans[a[i]] = i;
+template <typename T>
+pair<unordered_map<T, int>, vector<T>> compress(const vector<T> &a) {
+    auto decomp = a;
+    sort(decomp.begin(), decomp.end());
+    decomp.erase(unique(decomp.begin(), decomp.end()), decomp.end());
+    unordered_map<T, int> comp;
+    for (int i = 0; i < (int)decomp.size(); ++i) {
+        comp[decomp[i]] = i;
     }
-    return ans;
+    return {comp, decomp};
 }
