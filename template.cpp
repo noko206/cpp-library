@@ -21,6 +21,8 @@ const long long INF64 = 1001001001001001001;
 struct Init { Init() { ios::sync_with_stdio(0); cin.tie(0); cout << setprecision(15); }} init;
 template<class T> bool chmax(T &a, const T &b) { if (a < b) { a = b; return true; } return false; }
 template<class T> bool chmin(T &a, const T &b) { if (a > b) { a = b; return true; } return false; }
+template<class T> T gcd(T x, T y){ return (x % y) ? gcd(y, x % y) : y; }
+template<class T> T lcm(T x, T y){ return x / gcd(x, y) * y; }
 template<class T, class... Ts> void output(const T& a, const Ts&... b) { cout << a; (cout << ... << (cout << ' ', b)); cout << '\n'; }
 template<class T> void output(vector<T> v) { for (auto u : v) cout << u << ' '; cout << '\n'; };
 void yesno(bool is_ok) { cout << (is_ok ? "yes" : "no") << '\n'; }
