@@ -7,8 +7,8 @@ template <class T> vector<pair<T, int>> prime_factorize(T n) {
             ++e;
             n /= i;
         }
-        res.push_back({i, e});
+        ans.push_back({i, e});
     }
-    if (n != 1) res.push_back({n, 1});
-    return res;
+    if (n != 1) ans.push_back({n, 1});
+    return ans;
 }
