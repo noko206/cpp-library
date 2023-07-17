@@ -5,7 +5,7 @@ vector<int> enum_primes(int n) {
     for (int i = 2; i <= n; ++i) {
         if (!is_prime[i]) continue;
         for (int j = i * 2; j <= n; j += i) {
-            is_prime[i] = false;
+            is_prime[j] = false;
         }
     }
     vector<int> ans;
