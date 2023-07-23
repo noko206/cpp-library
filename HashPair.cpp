@@ -1,5 +1,5 @@
 // unordered_mapのキーをpair型にしたいとき
-struct Hash_Pair {
+struct HashPair {
     static size_t m_hash_pair_random;
     template <class T1, class T2>
     size_t operator()(const pair<T1, T2> &p) const {
@@ -13,4 +13,4 @@ struct Hash_Pair {
     }
 };
 
-size_t Hash_Pair::m_hash_pair_random = (size_t)random_device()();
+size_t HashPair::m_hash_pair_random = (size_t)random_device()();
