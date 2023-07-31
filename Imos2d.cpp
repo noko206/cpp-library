@@ -15,8 +15,12 @@ template <class T> struct Imos2d {
     void build() {
         for (int i = 0; i < h; ++i) {
             for (int j = 0; j < w; ++j) {
-                data[i + 1][j + 1] +=
-                    data[i + 1][j] + data[i][j + 1] - data[i][j];
+                data[i + 1][j] += data[i][j];
+            }
+        }
+        for (int j = 0; j < w; ++j) {
+            for (int i = 0; i < h; ++i) {
+                data[i][j + 1] += data[i][j];
             }
         }
     }
