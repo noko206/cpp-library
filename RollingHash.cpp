@@ -1,13 +1,14 @@
 struct RollingHash {
    public:
     RollingHash(const string &s, int base = 100, int mod = 998244353)
-        : base(base), mod(mod), hash(s.length()) {
+        : base(base), mod(mod), hash(s.length() + 1) {
         mint::set_mod(mod);
         build(s);
     }
 
     // [l, r)
     int query(int l, int r) {
+        assert(0 <= l && l <= r && r < hash.size());
         mint ans = hash[r] - (hash[l] * pow_mod(base, r - l, mod));
         return ans.val();
     }
